@@ -1,6 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<%= search_form_for @q do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :category_name_cont %>
+  <%= f.search_field :category_name_cont %>
+
+  <%= f.label :product_type_name_cont %>
+  <%= f.search_field :product_type_name_cont %>
+
+  <%= f.submit %>
+<% end %>
 
 <table>
   <thead>
@@ -24,8 +35,8 @@
         <td><%= product.qty %></td>
         <td><%= product.description %></td>
         <td><%= product.category.name %></td>
-        <td><%= product.product_type %></td>
-        <td><%= product.vendor_id %></td>
+        <td><%= product.product_type.name%></td>
+        <td><%= product.vendor.name %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

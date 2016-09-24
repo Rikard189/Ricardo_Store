@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924203356) do
+ActiveRecord::Schema.define(version: 20160924213353) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street"
@@ -113,12 +113,12 @@ ActiveRecord::Schema.define(version: 20160924203356) do
     t.integer  "qty"
     t.string   "description"
     t.integer  "category_id"
-    t.integer  "product_type"
+    t.integer  "product_type_id"
     t.integer  "vendor_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["product_type"], name: "index_products_on_product_type"
+    t.index ["product_type_id"], name: "index_products_on_product_type_id"
     t.index ["vendor_id"], name: "index_products_on_vendor_id"
   end
 

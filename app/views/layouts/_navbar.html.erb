@@ -28,6 +28,9 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href = ""> <%="#{current_user.email}" %> </a>
+         </li>
         <li><%= link_to carts_path do  %>
 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 <% end %></li>

@@ -37,13 +37,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :product_type %>
-    <%= f.select :product_type, @product_types.collect{|types| [types.name, types.id]}, {include_blank: true}%>
+    <%= f.label :product_type_id%>
+    <%= f.select :product_type_id, @product_types.collect{|types| [types.name, types.id]}, {include_blank: true}%>
   </div>
 
   <div class="field">
     <%= f.label :vendor_id %>
-    <%= f.number_field :vendor_id %>
+    <%= f.select :vendor_id, @vendors.collect{|vendor| [vendor.name, vendor.id]}, {include_blank: true} %>
   </div>
 
   <div class="actions">
